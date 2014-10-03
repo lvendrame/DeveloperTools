@@ -1,9 +1,4 @@
-app.factory('$cpf', [function(){
-    var calcMod11 = function(number){
-        number = 11 - (number % 11);
-        return (number > 9) ? 0 : number;
-    };
-
+ngApp.factory('$cpf', ['$docUtil', function($docUtil){
     return{
         getChecksum: function(cpfNumber){
             cpfNumber = cpfNumber.replace(/\D/gi, "");
@@ -15,20 +10,35 @@ app.factory('$cpf', [function(){
                 checksumParts[0] += value * fac;
             }
 
-            checksumParts[0] = calcMod11(checksumParts[0]);
+            checksumParts[0] = $docUtil.calcMod11(checksumParts[0]);
             checksumParts[1] += checksumParts[0] * 2;
-            checksumParts[1] = calcMod11(checksumParts[1]);
+            checksumParts[1] = $docUtil.calcMod11(checksumParts[1]);
             return checksumParts.join("");
         },
-        validade: function(cpfNumber){
+
+        validate: function(cpfNumber){
             cpfNumber += "";
             cpfNumber = cpfNumber.replace(/\D/gi, "");
             if(cpfNumber.length !== 11){
                 return false;
             }
 
+            if(/(^1{11}$)/.test(cpfNumber)||
+               /(^2{11}$)/.test(cpfNumber)||
+               /(^3{11}$)/.test(cpfNumber)||
+               /(^4{11}$)/.test(cpfNumber)||
+               /(^5{11}$)/.test(cpfNumber)||
+               /(^6{11}$)/.test(cpfNumber)||
+               /(^7{11}$)/.test(cpfNumber)||
+               /(^8{11}$)/.test(cpfNumber)||
+               /(^9{11}$)/.test(cpfNumber)||
+               /(^0{11}$)/.test(cpfNumber)){
+                return false;
+            }
+
             return cpfNumber.slice(-2) === this.getChecksum(cpfNumber);
         },
+
         generate: function(){
             var cpfNumber = "";
             for(var i=0;i<9;i++){
@@ -36,6 +46,7 @@ app.factory('$cpf', [function(){
             }
             return cpfNumber + this.getChecksum(cpfNumber);
         },
+
         generateWithMask: function(){
             return this.generate().replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"$1.$2.$3-$4");
         }
