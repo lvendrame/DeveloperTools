@@ -26,6 +26,10 @@
     "jquery": "~2.1.1",
     "angularjs": "~1.2.25",
     "bootstrap": "~3.2.0",
-    "jasmine": "~2.0.4"
+    "jasmine": "~2.0.4",
+    "angular-route": "~1.2.26",
+    "angular-i18n": "~1.2.26",
+    "angular-resource": "~1.2.26",
+    "angular-mocks": "~1.2.26"
   }
 }

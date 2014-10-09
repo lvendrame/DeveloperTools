@@ -1,1 +1,1 @@
-var ngApp = angular.module("devTools", []);
+var ngApp = angular.module('devTools', ['ngRoute']);
