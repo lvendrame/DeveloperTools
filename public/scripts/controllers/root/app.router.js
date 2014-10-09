@@ -7,6 +7,10 @@ ngApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: '../includes/documents/ptBR/cpf.html',
         controller: 'CpfController'
       }).
+      when('/brazil/documents/cnpj', {
+        templateUrl: '../includes/documents/ptBR/cnpj.html',
+        controller: 'CnpjController'
+      }).
       otherwise({
         redirectTo: '/'
       });
