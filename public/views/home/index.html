@@ -43,10 +43,28 @@
           <a class="navbar-brand" href="#">Developer Tools</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/">Index</a></li>
-            <li><a href="#/brazil/documents/cpf">CPF</a></li>
-            <li><a href="#/brazil/documents/cnpj">CNPJ</a></li>
+          <ul class="nav navbar-nav navbar-right" data-ng-controller="MenuController" >
+               <li data-ng-repeat="mnItem in menu" class="dropdown">
+                   <a href="{{mnItem.url}}">{{mnItem.name}}</a>
+                   <ul data-ng-if="mnItem.children">
+                       <li>filhos</li>
+                   </ul>
+               </li>
+                <li><a href="#/">Index</a></li>
+                <li><a href="#/brazil/documents/cpf">CPF</a></li>
+                <li><a href="#/brazil/documents/cnpj">CNPJ</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Help</a></li>
           </ul>
@@ -102,12 +120,19 @@
     <script src="../../scripts/controllers/root/app.js"></script>
     <script src="../../scripts/controllers/root/app.router.js"></script>
 
+    <!-- Ng Menu -->
+    <script src="../../scripts/controllers/root/menu/indexMenu.js"></script>
+    <script src="../../scripts/controllers/root/menu/documentsMenu.js"></script>
+    <script src="../../scripts/controllers/root/menu/languagesMenu.js"></script>
+    <script src="../../scripts/controllers/root/app.menu.js"></script>
+
     <!-- Services -->
     <script src="../../scripts/controllers/documents/ptBr/util.js"></script>
     <script src="../../scripts/controllers/documents/ptBr/cpf.js"></script>
     <script src="../../scripts/controllers/documents/ptBr/cnpj.js"></script>
 
     <!-- Controllers -->
+    <script src="../../scripts/controllers/root/menu/MenuController.js"></script>
     <script src="../../scripts/controllers/documents/ptBr/CpfController.js"></script>
     <script src="../../scripts/controllers/documents/ptBr/CnpjController.js"></script>
   </body>
