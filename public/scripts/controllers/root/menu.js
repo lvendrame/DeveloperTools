@@ -1,4 +1,4 @@
-(function(window){
+/*(function(window){
 
     var root = {children:[]};
     var groupMenu = new MenuItem("Portuguese", "", root);
@@ -7,4 +7,4 @@
 
     window.rootMenu = root;
 
-})(window);
+})(window);*/

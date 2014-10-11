@@ -6,11 +6,11 @@ ngApp.factory('indexMenu', [function(){
         sideMenu:[
             {
                 name:'About',
-                url:'#/About'
+                url:'#/about'
             },
             {
                 name:'Who we are',
-                url:'#/Who'
+                url:'#/who'
             }
         ]
     };

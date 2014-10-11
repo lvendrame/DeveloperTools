@@ -5,11 +5,21 @@ ngApp.factory('documentsMenu', [function(){
         children:[
             {
                 name:'Brazil',
-                url:'#/Documents/Brazil'
+                url:'#/documents/brazil',
+                sideMenu:[
+                    {
+                        name:'CPF',
+                        url:'#/documents/brazil/cpf'
+                    },
+                    {
+                        name:'CNPJ',
+                        url:'#/documents/brazil/cnpj'
+                    }
+                ]
             },
             {
                 name:'USA',
-                url:'#/Documents/USA'
+                url:'#/documents/usa'
             }
         ]
     };

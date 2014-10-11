@@ -5,11 +5,17 @@ ngApp.factory('languagesMenu', [function(){
         children:[
             {
                 name:'JavaScript',
-                url:'#/Languages/JavaScript'
+                url:'#/languages/javascript',
+                sideMenu:[
+                    {
+                        name:'Generator',
+                        url:'#/languages/javascript/generator'
+                    }
+                ]
             },
             {
                 name:'C#',
-                url:'#/Languages/CSharp'
+                url:'#/languages/csharp'
             }
         ]
     };
