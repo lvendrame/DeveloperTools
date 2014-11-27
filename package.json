@@ -1,0 +1,27 @@
+{
+  "name": "DeveloperTools",
+  "version": "0.0.1",
+  "description": "DeveloperTools\r ==============",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lvendrame/DeveloperTools.git"
+  },
+  "keywords": [
+    "developer",
+    "tools"
+  ],
+  "author": "Luís Fernando Vendrame <lvendrame@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvendrame/DeveloperTools/issues"
+  },
+  "homepage": "https://github.com/lvendrame/DeveloperTools",
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "express": "^4.10.4"
+  }
+}
